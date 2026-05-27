@@ -61,8 +61,10 @@ main{position:relative;z-index:1;padding:30px 20px 60px;display:flex;align-items
 .scratch-stage.revealed{transform:scale(1.06)}
 
 .coupon{position:absolute;inset:0;background:var(--grad-hot);border-radius:24px;padding:30px 22px;
-  box-shadow:var(--shadow-card);display:flex;flex-direction:column;justify-content:center;text-align:center;color:#fff;overflow:hidden}
-.coupon::before,.coupon::after{content:'';position:absolute;width:36px;height:36px;border-radius:50%;background:#FBD3E1;top:50%;transform:translateY(-50%)}
+  border:2px solid rgba(255,255,255,.35);
+  box-shadow:var(--shadow-card);display:flex;flex-direction:column;justify-content:space-between;text-align:center;color:#fff;overflow:hidden}
+.coupon-top{display:flex;flex-direction:column;align-items:center}
+.coupon::before,.coupon::after{content:'';position:absolute;width:36px;height:36px;border-radius:50%;background:#FBD3E1;top:50%;transform:translateY(-50%);z-index:3}
 .coupon::before{left:-18px}
 .coupon::after{right:-18px}
 
@@ -70,7 +72,7 @@ main{position:relative;z-index:1;padding:30px 20px 60px;display:flex;align-items
 .discount-lbl{font-family:'Fredoka';font-weight:600;font-size:1.6rem;margin-top:-4px;letter-spacing:.02em}
 .discount-tag{font-size:.96rem;color:rgba(255,255,255,.92);font-weight:600;margin:8px 22px 0}
 
-.separator{position:relative;margin:22px 0;height:0;border-top:3px dashed rgba(255,255,255,.55)}
+.separator{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:0;border-top:3px dashed rgba(255,255,255,.6);margin:0;z-index:2}
 
 .code-box{background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 8px 20px rgba(0,0,0,.18);border:3px dashed rgba(214,51,110,.3)}
 .code-box .code-lbl{color:var(--ink-soft);font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
@@ -145,9 +147,11 @@ main{position:relative;z-index:1;padding:30px 20px 60px;display:flex;align-items
     <!-- SCRATCH CARD -->
     <div class="scratch-stage" id="scratchStage">
       <div class="coupon" id="coupon">
-        <div class="discount-num">40<span style="font-size:.5em;vertical-align:top">%</span></div>
-        <div class="discount-lbl">DE DESCONTO</div>
-        <div class="discount-tag">no seu pedido LipoGummy — válido só pelo WhatsApp</div>
+        <div class="coupon-top">
+          <div class="discount-num">40<span style="font-size:.5em;vertical-align:top">%</span></div>
+          <div class="discount-lbl">DE DESCONTO</div>
+          <div class="discount-tag">no seu pedido LipoGummy — válido só pelo WhatsApp</div>
+        </div>
         <div class="separator"></div>
         <div class="code-box">
           <div class="code-lbl">Seu cupom exclusivo</div>
