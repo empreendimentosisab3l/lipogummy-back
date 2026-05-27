@@ -42,7 +42,7 @@ header{background:#fff;border-bottom:1px solid rgba(236,78,142,.15);position:sti
 .lg-lipo{color:var(--pink-deep)}
 
 /* ====== MAIN ====== */
-main{position:relative;z-index:1;padding:30px 20px 60px;display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 110px)}
+main{position:relative;z-index:1;padding:30px 20px 60px;display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 50px)}
 .game-wrap{max-width:440px;width:100%;text-align:center}
 
 .eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--pink-deep);
@@ -51,9 +51,9 @@ main{position:relative;z-index:1;padding:30px 20px 60px;display:flex;align-items
 .eyebrow .dot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:blink 1.4s infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
 
-.intro-title{font-size:clamp(1.6rem,4.5vw,2.2rem);margin-bottom:10px;color:var(--ink);transition:all .7s}
+.intro-title{font-size:clamp(1.5rem,4.5vw,2.2rem);margin-bottom:8px;color:var(--ink);transition:all .7s}
 .intro-title .hl{color:var(--pink-deep)}
-.intro-sub{font-size:1rem;color:var(--ink-soft);font-weight:600;margin-bottom:24px;transition:all .7s}
+.intro-sub{font-size:.98rem;color:var(--ink-soft);font-weight:600;margin-bottom:18px;transition:all .7s}
 .intro-title.faded,.intro-sub.faded{filter:blur(4px);opacity:.4;transform:scale(.95)}
 
 /* ====== SCRATCH CARD ====== */
@@ -112,22 +112,27 @@ main{position:relative;z-index:1;padding:30px 20px 60px;display:flex;align-items
 
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
 
-@media (max-width:420px){
-  .scratch-stage{max-width:300px}
-  .discount-num{font-size:5rem}
-  .discount-lbl{font-size:1.4rem}
+@media (max-width:680px){
+  main{padding:16px 18px 48px;min-height:calc(100vh - 50px)}
+  .eyebrow{margin-bottom:10px;font-size:.7rem;padding:7px 16px}
+  .intro-title{font-size:1.45rem;margin-bottom:6px}
+  .intro-sub{font-size:.92rem;margin-bottom:14px;line-height:1.4}
+  .scratch-stage{max-width:320px;aspect-ratio:320/380}
+}
+@media (max-width:380px){
+  .scratch-stage{max-width:288px;aspect-ratio:288/340}
+  .discount-num{font-size:4.6rem}
+  .discount-lbl{font-size:1.3rem}
+  .discount-tag{font-size:.86rem;margin-top:4px}
+  .code-box{padding:10px 14px}
+  .code-box .code-val{font-size:1.5rem}
+  .separator{margin:16px 0}
 }
 </style>
 </head>
 <body>
 
 <div class="topbar">🎁 Sua tentativa expira em instantes — não saia desta página</div>
-
-<header>
-  <div class="head-in">
-    <div class="logo"><span class="lg-lipo">Lipo</span>Gummy</div>
-  </div>
-</header>
 
 <main>
   <div class="game-wrap">
