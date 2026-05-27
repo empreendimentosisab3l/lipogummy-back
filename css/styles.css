@@ -250,7 +250,3 @@ footer p{color:rgba(255,255,255,.7);font-weight:500;max-width:380px;margin-top:8
 
 /* sticky CTA mobile */
 .sticky-cta{z-index:95}
-
-/* botao WhatsApp (verde) - sobrescreve .btn */
-.btn-whats{background:#25D366 !important;box-shadow:0 14px 30px -10px rgba(37,211,102,.7),inset 0 1px 0 rgba(255,255,255,.35) !important}
-.btn-whats:hover{background:#1ebe5a !important;box-shadow:0 22px 40px -12px rgba(37,211,102,.8) !important}
