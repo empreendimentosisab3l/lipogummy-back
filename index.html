@@ -1,384 +1,384 @@
-<!DOCTYPE html><html lang="pt-BR"><head>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LipoGummy® — Oferta Exclusiva (Última Chance)</title>
+<title>LipoGummy® — Você ganhou uma tentativa!</title>
 <link href="css/fonts.css" rel="stylesheet">
-<link href="css/styles.css" rel="stylesheet">
+<style>
+:root{
+  --pink:#EC4E8E;
+  --pink-deep:#D6336E;
+  --magenta:#C12C66;
+  --rose:#F6A7C6;
+  --rose-soft:#FBD9E4;
+  --rose-mist:#FFEAF1;
+  --cream:#FFF6F9;
+  --red:#E5384A;
+  --ink:#3B2430;
+  --ink-soft:#7A6470;
+  --plum:#2B1722;
+  --gold:#FFC23C;
+  --grad-rose:linear-gradient(160deg,#FFEAF1 0%,#FBD3E1 55%,#F6B6CE 100%);
+  --grad-hot:linear-gradient(135deg,#F2629A 0%,#D6336E 100%);
+  --shadow-card:0 24px 60px -24px rgba(193,44,102,.40);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Nunito',-apple-system,sans-serif;color:var(--ink);background:var(--grad-rose);min-height:100vh;line-height:1.55;overflow-x:hidden;position:relative}
+body::before,body::after{content:'';position:fixed;border-radius:50%;background:rgba(255,255,255,.45);filter:blur(40px);pointer-events:none;z-index:0}
+body::before{width:340px;height:340px;top:-120px;left:-120px}
+body::after{width:300px;height:300px;bottom:-100px;right:-100px}
+h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+
+/* ====== TOP BAR ====== */
+.topbar{background:var(--red);color:#fff;text-align:center;font-weight:800;font-size:.86rem;
+  padding:10px 16px;letter-spacing:.02em;text-transform:uppercase;position:relative;z-index:10}
+
+/* ====== HEADER ====== */
+header{background:#fff;border-bottom:1px solid rgba(236,78,142,.15);position:sticky;top:0;z-index:10}
+.head-in{display:flex;align-items:center;justify-content:center;height:60px;padding:0 22px}
+.logo{font-family:'Fredoka';font-weight:600;font-size:1.4rem;letter-spacing:-.02em}
+.lg-lipo{color:var(--pink-deep)}
+
+/* ====== MAIN ====== */
+main{position:relative;z-index:1;padding:30px 20px 60px;display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 50px)}
+.game-wrap{max-width:440px;width:100%;text-align:center}
+
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--pink-deep);
+  font-weight:800;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:8px 18px;border-radius:50px;box-shadow:0 18px 50px -18px rgba(214,51,110,.45);margin-bottom:18px}
+.eyebrow .dot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+.intro-title{font-size:clamp(1.5rem,4.5vw,2.2rem);margin-bottom:8px;color:var(--ink);transition:all .7s}
+.intro-title .hl{color:var(--pink-deep)}
+.intro-sub{font-size:.98rem;color:var(--ink-soft);font-weight:600;margin-bottom:18px;transition:all .7s}
+.intro-title.faded,.intro-sub.faded{filter:blur(4px);opacity:.4;transform:scale(.95)}
+
+/* ====== SCRATCH CARD ====== */
+.scratch-stage{position:relative;margin:0 auto 22px;transition:transform .7s;width:100%;max-width:340px;aspect-ratio:340/420}
+.scratch-stage.revealed{transform:scale(1.06)}
+
+.coupon{position:absolute;inset:0;background:var(--grad-hot);border-radius:24px;padding:30px 22px;
+  border:2px solid rgba(255,255,255,.35);
+  box-shadow:var(--shadow-card);display:flex;flex-direction:column;justify-content:space-between;text-align:center;color:#fff;overflow:hidden}
+.coupon-top{display:flex;flex-direction:column;align-items:center}
+.coupon::before,.coupon::after{content:'';position:absolute;width:36px;height:36px;border-radius:50%;background:#FBD3E1;top:50%;transform:translateY(-50%);z-index:3}
+.coupon::before{left:-18px}
+.coupon::after{right:-18px}
+
+.discount-num{font-family:'Fredoka';font-weight:600;font-size:clamp(5rem,18vw,6.5rem);line-height:1;color:#fff;text-shadow:0 6px 18px rgba(0,0,0,.18)}
+.discount-lbl{font-family:'Fredoka';font-weight:600;font-size:1.6rem;margin-top:-4px;letter-spacing:.02em}
+.discount-tag{font-size:.96rem;color:rgba(255,255,255,.92);font-weight:600;margin:8px 22px 0}
+
+.separator{position:absolute;left:0;right:0;top:50%;transform:translateY(-50%);height:0;border-top:3px dashed rgba(255,255,255,.6);margin:0;z-index:2}
+
+.code-box{background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 8px 20px rgba(0,0,0,.18);border:3px dashed rgba(214,51,110,.3)}
+.code-box .code-lbl{color:var(--ink-soft);font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.code-box .code-val{font-family:'Fredoka';font-weight:600;font-size:1.8rem;color:var(--pink-deep);letter-spacing:.06em;display:flex;align-items:center;justify-content:center;gap:8px}
+.code-box .code-val::before{content:'✓';display:inline-flex;width:24px;height:24px;background:var(--pink-deep);color:#fff;border-radius:50%;align-items:center;justify-content:center;font-size:.9rem;font-weight:900}
+
+.scratch-canvas{position:absolute;inset:0;width:100%;height:100%;cursor:pointer;border-radius:24px;touch-action:none;display:block}
+
+/* ====== STATUS ====== */
+.scratch-hint{font-size:.92rem;color:var(--pink-deep);font-weight:800;margin-top:14px;min-height:1.4em}
+.reveal-btn{display:none;width:100%;max-width:340px;margin:14px auto 0;background:#fff;border:2px dashed var(--pink-deep);color:var(--pink-deep);
+  font-family:'Fredoka';font-weight:600;font-size:.96rem;padding:12px 20px;border-radius:50px;cursor:pointer;
+  transition:transform .18s,box-shadow .18s}
+.reveal-btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(214,51,110,.2)}
+.reveal-btn.show{display:inline-block;animation:fadeIn .4s ease}
+
+/* ====== REVEALED STATE ====== */
+.success-msg{display:none;margin:22px auto 0;max-width:380px;animation:fadeIn .5s ease}
+.success-msg.show{display:block}
+.success-msg h2{font-size:1.4rem;color:var(--ink);margin-bottom:8px}
+.success-msg h2 .hl{color:var(--pink-deep)}
+.success-msg p{color:var(--ink-soft);font-weight:600;font-size:.96rem;margin-bottom:18px}
+
+.expire-box{background:#fff;border-radius:18px;padding:14px 22px;box-shadow:0 12px 30px -16px rgba(193,44,102,.4);display:inline-flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:18px}
+.expire-lbl{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.expire-timer{font-family:'Fredoka';font-weight:600;font-size:2rem;color:var(--pink-deep);line-height:1;font-variant-numeric:tabular-nums}
+
+.btn-cta{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.06rem;color:#fff;background:#25D366;padding:16px 32px;border-radius:60px;text-decoration:none;
+  box-shadow:0 14px 30px -10px rgba(37,211,102,.6),inset 0 1px 0 rgba(255,255,255,.35);
+  transition:transform .18s,box-shadow .18s;text-transform:uppercase;letter-spacing:.04em;width:100%;max-width:340px;border:none;cursor:pointer}
+.btn-cta:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 22px 40px -12px rgba(37,211,102,.7);color:#fff}
+.btn-cta svg{width:24px;height:24px;fill:#fff}
+
+.btn-secondary{display:block;margin:14px auto 0;background:none;border:none;color:var(--ink-soft);font-size:.86rem;font-weight:700;text-decoration:underline;cursor:pointer;font-family:'Nunito',sans-serif}
+.btn-secondary:hover{color:var(--pink-deep)}
+
+.redirect-info{margin-top:18px;font-size:.82rem;color:var(--ink-soft);font-weight:700}
+.redirect-info span{color:var(--pink-deep);font-weight:800}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+@media (max-width:680px){
+  main{padding:16px 18px 48px;min-height:calc(100vh - 50px)}
+  .eyebrow{margin-bottom:10px;font-size:.7rem;padding:7px 16px}
+  .intro-title{font-size:1.45rem;margin-bottom:6px}
+  .intro-sub{font-size:.92rem;margin-bottom:14px;line-height:1.4}
+  .scratch-stage{max-width:320px;aspect-ratio:320/380}
+}
+@media (max-width:380px){
+  .scratch-stage{max-width:288px;aspect-ratio:288/340}
+  .discount-num{font-size:4.6rem}
+  .discount-lbl{font-size:1.3rem}
+  .discount-tag{font-size:.86rem;margin-top:4px}
+  .code-box{padding:10px 14px}
+  .code-box .code-val{font-size:1.5rem}
+  .separator{margin:16px 0}
+}
+</style>
 </head>
 <body>
 
-<!-- ====== TOP BAR ====== -->
-<div class="topbar">🎁 Sua oferta exclusiva expira em instantes — não feche esta página</div>
+<div class="topbar">🎁 Sua tentativa expira em instantes — não saia desta página</div>
 
-<!-- ====== HEADER ====== -->
-<header>
-  <div class="head-in">
-    <div class="logo">
-      <span><span class="lg-lipo">Lipo</span>Gummy</span>
-    </div>
-    <div class="head-stars">
-      <span class="s">★★★★★</span><br>+8.500 clientes
-    </div>
-  </div>
-</header>
+<main>
+  <div class="game-wrap">
 
-<!-- ====== HERO BACK OFFER ====== -->
-<section class="hero">
-  <div class="wrap">
-    <span class="eyebrow"><span class="dot"></span> Oferta exclusiva · Última chance</span>
-    <div class="vip-pill">⭐ Apenas 2% dos visitantes recebem esta condição</div>
-    <h1>Espera! Antes de ir, <span class="hl">temos um presente</span> pra você 🍓</h1>
-    <p class="sub">Liberamos um <b>desconto extra de R$ 100</b> em todos os combos do <b>LipoGummy</b>. Aproveite enquanto a contagem regressiva permite — depois disso, o valor volta ao normal.</p>
+    <!-- INTRO (some quando revelar) -->
+    <span class="eyebrow" id="eyebrow"><span class="dot"></span> Você ganhou 1 tentativa</span>
+    <h1 class="intro-title" id="introTitle">Raspe para revelar seu <span class="hl">desconto exclusivo</span> 🍓</h1>
+    <p class="intro-sub" id="introSub">Apenas 2% dos visitantes recebem esta chance. Use o dedo (ou o mouse) para raspar a cartela abaixo.</p>
 
-    <div class="big-disc">Hoje você economiza até <span>R$ 600</span></div>
-
-    <div class="countdown-box">
-      <div class="countdown-lab">⚠ Esta oferta expira em</div>
-      <div class="timer" data-timer="00:14:59">
-        <div class="tunit"><span class="num" data-h="">00</span><span class="lab">Horas</span></div>
-        <div class="tunit"><span class="num" data-m="">14</span><span class="lab">Minutos</span></div>
-        <div class="tunit"><span class="num" data-s="">58</span><span class="lab">Segundos</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ====== WHATSAPP BANNER ====== -->
-<section class="wpp-banner">
-  <div class="wrap">
-    <div class="wpp-banner-inner">
-      <div class="wpp-banner-text">
-        <span class="wpp-tag">🎁 Cupom exclusivo</span>
-        <h3>Você ganhou <strong>R$ 150 DE DESCONTO</strong> extra!</h3>
-        <p>Fale agora com nossa atendente no WhatsApp e resgate seu cupom antes que expire.</p>
-      </div>
-      <a href="https://metabolismoativo.com/back-whats/" target="_blank" class="btn-wpp">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-        Falar com atendente
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ====== OFFERS ====== -->
-<section class="offers" id="oferta">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-tag">Escolha seu tratamento</span>
-      <h2>Quanto <span class="hl">mais potes</span>, maior o resultado <span class="hl">e a economia</span></h2>
-      <p>Frete grátis em todos os combos. Garantia de 30 dias mesmo nesta oferta especial.</p>
-    </div>
-
-    <div class="offer-grid">
-
-      <!-- 1 POTE -->
-      <div class="offer">
-        <h3>1 Pote</h3>
-        <div class="qtytxt">Para experimentar · 1 mês</div>
-        <div class="combo-img-wrap"><img src="images/pote-1.webp" alt="LipoGummy 1 Pote" loading="lazy"></div>
-        <div class="price-old">de R$ 297</div>
-        <div class="price-now">R$ 197<span class="cents">,00</span></div>
-        <div class="per-unit">R$ 197 por pote</div>
-        <div class="installment">12x de R$ 19,66</div>
-        <ul class="ofeats">
-          <li><span class="ck">✓</span> 30 gomas sabor morango</li>
-          <li><span class="ck">✓</span> Frete grátis</li>
-          <li><span class="ck">✓</span> Garantia 30 dias</li>
-        </ul>
-        <a href="https://checkout.payt.com.br/db5a2b11cd60316f5db7a66e657a626a?src=lipo-back&split=12" class="btn btn-block" target="_blank" rel="noopener">COMPRAR 1 POTE</a>
-        <div class="ship">+ <b>frete grátis</b></div>
-      </div>
-
-      <!-- 3 POTES -->
-      <div class="offer">
-        <h3>3 Potes</h3>
-        <div class="qtytxt">Tratamento ideal · 3 meses</div>
-        <div class="combo-img-wrap"><img src="images/pote-3.webp" alt="LipoGummy 3 Potes" loading="lazy"></div>
-        <div class="price-old">de R$ 591</div>
-        <div class="price-now">R$ 411<span class="cents">,00</span></div>
-        <div class="per-unit">apenas <b>R$ 137,00</b> por pote</div>
-        <div class="installment">12x de R$ 41,00</div>
-        <ul class="ofeats">
-          <li><span class="ck">✓</span> 90 gomas sabor morango</li>
-          <li><span class="ck">✓</span> Economia de R$ 180</li>
-          <li><span class="ck">✓</span> Frete grátis</li>
-          <li><span class="ck">✓</span> Garantia 30 dias</li>
-        </ul>
-        <a href="https://checkout.payt.com.br/ed956bfb0106a30ad63434f487922f00?src=lipo-back&split=12" class="btn btn-block" target="_blank" rel="noopener">COMPRAR 3 POTES</a>
-        <div class="ship">+ <b>frete grátis</b></div>
-      </div>
-
-      <!-- 6 POTES (destaque) -->
-      <div class="offer feat">
-        <span class="tag-top">👑 MAIS ESCOLHIDO · MELHOR CUSTO-BENEFÍCIO</span>
-        <h3>6 Potes</h3>
-        <div class="qtytxt">Resultado máximo · 6 meses</div>
-        <div class="combo-img-wrap"><img src="images/pote-6.webp" alt="LipoGummy 6 Potes" loading="lazy"></div>
-        <div class="price-old">de R$ 1.182</div>
-        <div class="price-now">R$ 582<span class="cents">,00</span></div>
-        <div class="per-unit">apenas <b>R$ 97,00</b> por pote</div>
-        <div class="installment">12x de R$ 58,11</div>
-        <ul class="ofeats">
-          <li><span class="ck">✓</span> 180 gomas sabor morango</li>
-          <li><span class="ck">✓</span> Economia de R$ 600</li>
-          <li><span class="ck">✓</span> Frete grátis</li>
-          <li><span class="ck">✓</span> Garantia 30 dias</li>
-        </ul>
-        <a href="https://checkout.payt.com.br/bb70a62d8538aa14e646cc6e2c4e8886?src=lipo-back&split=12" class="btn btn-block btn-pulse" target="_blank" rel="noopener">COMPRAR 6 POTES</a>
-        <div class="ship">+ <b>frete grátis</b></div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- ====== TRUST ROW ====== -->
-<section class="trust-row">
-  <div class="wrap">
-    <div class="trust-grid">
-      <span class="trust-pill"><span class="ck">✓</span> Padrão Anvisa</span>
-      <span class="trust-pill"><span class="ck">✓</span> Sabor Morango</span>
-      <span class="trust-pill"><span class="ck">✓</span> 30 gomas / pote</span>
-      <span class="trust-pill"><span class="ck">✓</span> Frete grátis Brasil</span>
-      <span class="trust-pill"><span class="ck">✓</span> 99% satisfação · 8.533 avaliações</span>
-    </div>
-  </div>
-</section>
-
-<!-- ====== GUARANTEE ====== -->
-<section class="guarantee">
-  <div class="wrap">
-    <div class="guarantee-inner">
-      <div class="seal">
-        <div class="seal-circle">
-          <div>
-            <b>30</b>
-            <span>Dias de garantia</span>
-          </div>
+    <!-- SCRATCH CARD -->
+    <div class="scratch-stage" id="scratchStage">
+      <div class="coupon" id="coupon">
+        <div class="coupon-top">
+          <div class="discount-num">40<span style="font-size:.5em;vertical-align:top">%</span></div>
+          <div class="discount-lbl">DE DESCONTO</div>
+          <div class="discount-tag">no seu pedido LipoGummy — válido só pelo WhatsApp</div>
+        </div>
+        <div class="separator"></div>
+        <div class="code-box">
+          <div class="code-lbl">Seu cupom exclusivo</div>
+          <div class="code-val">CLIENTE40</div>
         </div>
       </div>
-      <div>
-        <h2>Risco zero — ou seu dinheiro de volta</h2>
-        <p>Você tem <b>30 dias</b> para experimentar o LipoGummy. Se não ficar 100% satisfeita com o produto, com os resultados ou com a experiência, basta enviar um e-mail para <a class="mail" href="mailto:sac@lipogummy.com.br">sac@lipogummy.com.br</a> e nós devolvemos cada centavo investido. Sem perguntas, sem burocracia.</p>
-      </div>
+      <canvas class="scratch-canvas" id="canvas"></canvas>
     </div>
-  </div>
-</section>
 
-<!-- ====== URGENCY FINAL + SEGUNDA CHAMADA ====== -->
-<section class="final-urgency">
-  <div class="wrap">
-    <span class="eyebrow"><span class="dot"></span> Esta oferta não volta</span>
-    <h2>Garanta sua <span class="hl">LipoGummy</span> agora <br>antes que o estoque acabe 🍓</h2>
-    <p class="sub">Quando o cronômetro zerar, os valores voltam ao normal automaticamente. Não perca essa chance.</p>
-    <div class="countdown-box">
-      <div class="countdown-lab">⚠ Esta oferta expira em</div>
-      <div class="timer" data-timer="00:14:59">
-        <div class="tunit"><span class="num" data-h="">00</span><span class="lab">Horas</span></div>
-        <div class="tunit"><span class="num" data-m="">14</span><span class="lab">Minutos</span></div>
-        <div class="tunit"><span class="num" data-s="">58</span><span class="lab">Segundos</span></div>
-      </div>
-    </div>
-  </div>
-</section>
+    <!-- HINT / REVEAL BUTTON -->
+    <p class="scratch-hint" id="hint">👆 Raspe a cartela acima</p>
+    <button class="reveal-btn" id="revealBtn" type="button">✨ Revelar agora</button>
 
-<!-- ====== OFFERS (REPETE) ====== -->
-<section class="offers offers-repeat">
-  <div class="wrap">
-    <div class="offer-grid">
+    <!-- REVEALED MESSAGE -->
+    <div class="success-msg" id="successMsg">
+      <h2>Parabéns! Você ganhou <span class="hl">40% OFF</span></h2>
+      <p>Resgate seu cupom <strong>CLIENTE40</strong> agora mesmo no WhatsApp. Ele expira em:</p>
 
-      <div class="offer">
-        <h3>1 Pote</h3>
-        <div class="qtytxt">Para experimentar · 1 mês</div>
-        <div class="combo-img-wrap"><img src="images/pote-1.webp" alt="LipoGummy 1 Pote" loading="lazy"></div>
-        <div class="price-old">de R$ 297</div>
-        <div class="price-now">R$ 197<span class="cents">,00</span></div>
-        <div class="per-unit">R$ 197 por pote</div>
-        <div class="installment">12x de R$ 19,66</div>
-        <a href="https://checkout.payt.com.br/db5a2b11cd60316f5db7a66e657a626a?src=lipo-back&split=12" class="btn btn-block" target="_blank" rel="noopener">COMPRAR 1 POTE</a>
-        <div class="ship">+ <b>frete grátis</b></div>
+      <div class="expire-box">
+        <div class="expire-lbl">⏱ Cupom válido por</div>
+        <div class="expire-timer" id="expireTimer">10:00</div>
       </div>
 
-      <div class="offer">
-        <h3>3 Potes</h3>
-        <div class="qtytxt">Tratamento ideal · 3 meses</div>
-        <div class="combo-img-wrap"><img src="images/pote-3.webp" alt="LipoGummy 3 Potes" loading="lazy"></div>
-        <div class="price-old">de R$ 591</div>
-        <div class="price-now">R$ 411<span class="cents">,00</span></div>
-        <div class="per-unit">apenas <b>R$ 137,00</b> por pote</div>
-        <div class="installment">12x de R$ 41,00</div>
-        <a href="https://checkout.payt.com.br/ed956bfb0106a30ad63434f487922f00?src=lipo-back&split=12" class="btn btn-block" target="_blank" rel="noopener">COMPRAR 3 POTES</a>
-        <div class="ship">+ <b>frete grátis</b></div>
-      </div>
+      <a href="https://metabolismoativo.com/back-whats/" target="_blank" class="btn-cta" id="ctaWpp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Resgatar no WhatsApp
+      </a>
 
-      <div class="offer feat">
-        <span class="tag-top">👑 MAIS ESCOLHIDO · MELHOR CUSTO-BENEFÍCIO</span>
-        <h3>6 Potes</h3>
-        <div class="qtytxt">Resultado máximo · 6 meses</div>
-        <div class="combo-img-wrap"><img src="images/pote-6.webp" alt="LipoGummy 6 Potes" loading="lazy"></div>
-        <div class="price-old">de R$ 1.182</div>
-        <div class="price-now">R$ 582<span class="cents">,00</span></div>
-        <div class="per-unit">apenas <b>R$ 97,00</b> por pote</div>
-        <div class="installment">12x de R$ 58,11</div>
-        <a href="https://checkout.payt.com.br/bb70a62d8538aa14e646cc6e2c4e8886?src=lipo-back&split=12" class="btn btn-block btn-pulse" target="_blank" rel="noopener">COMPRAR 6 POTES</a>
-        <div class="ship">+ <b>frete grátis</b></div>
-      </div>
+      <button class="btn-secondary" id="seeOffers" type="button">Ver as ofertas do site →</button>
 
+      <p class="redirect-info">Redirecionando em <span id="redirectIn">5</span>s…</p>
     </div>
+
   </div>
-</section>
+</main>
 
-<!-- ====== FAQ ====== -->
-<section class="faq">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="sec-tag">Dúvidas frequentes</span>
-      <h2>Perguntas que mais recebemos</h2>
-    </div>
-    <div class="faq-list">
-      <details>
-        <summary>Esta oferta com desconto é segura?</summary>
-        <div class="ans">Sim. Esta é uma condição exclusiva liberada apenas para quem está saindo da página. O produto e a garantia de 30 dias são exatamente os mesmos da oferta principal.</div>
-      </details>
-      <details>
-        <summary>Em quanto tempo eu vejo resultado?</summary>
-        <div class="ans">A maioria das clientes nota redução do apetite e mais disposição já na 1ª semana. Para resultados visíveis no corpo, recomendamos o tratamento contínuo de 3 a 6 meses.</div>
-      </details>
-      <details>
-        <summary>Como devo tomar?</summary>
-        <div class="ans">Basta mastigar 1 gominha por dia, de preferência no período da manhã. Tem sabor morango de verdade — vira o momento mais gostoso do dia.</div>
-      </details>
-      <details>
-        <summary>Qual combo o time recomenda?</summary>
-        <div class="ans">O combo de <b>3 potes</b> é o mais escolhido porque cobre o ciclo ideal de 90 dias. O de <b>6 potes</b> traz a maior economia por pote e é indicado pra quem busca o resultado máximo.</div>
-      </details>
-      <details>
-        <summary>Tem alguma contra-indicação?</summary>
-        <div class="ans">É um suplemento natural e bem tolerado pela maioria das pessoas. Gestantes, lactantes, menores de idade ou pessoas em uso de medicamentos contínuos devem consultar um médico antes de iniciar.</div>
-      </details>
-      <details>
-        <summary>O frete é grátis mesmo?</summary>
-        <div class="ans">Sim — frete grátis para todo o Brasil em qualquer combo desta página.</div>
-      </details>
-    </div>
-  </div>
-</section>
-
-<!-- ====== FOOTER ====== -->
-<footer>
-  <div class="wrap">
-    <div>
-      <div class="logo"><span><span class="lg-lipo">Lipo</span>Gummy</span></div>
-      <p>Suplemento alimentar em pastilhas de goma, sabor morango. Mais leveza e bem-estar no formato mais gostoso que existe.</p>
-    </div>
-    <div class="flinks">
-      <a href="mailto:sac@lipogummy.com.br">sac@lipogummy.com.br</a>
-      <a href="#oferta">Comprar agora</a>
-      <a href="#">Política de privacidade</a>
-      <a href="#">Termos de uso</a>
-      <a href="#">Política de reembolso</a>
-    </div>
-  </div>
-  <div class="disclaimer">
-    Este produto é um suplemento alimentar e não é medicamento. Não possui ação terapêutica nem substitui uma alimentação equilibrada e a prática de atividade física. Resultados podem variar de pessoa para pessoa. As imagens e relatos são ilustrativos. SAC: sac@lipogummy.com.br.
-    <br>© 2026 LipoGummy®. Todos os direitos reservados.
-  </div>
-</footer>
-
-<!-- ====== STICKY MOBILE CTA ====== -->
-<div class="sticky-cta">
-  <div class="info"><b>12x R$ 35,60</b><s>de R$ 582</s> · 6 potes</div>
-  <a href="https://metabolismoativo.com/back-whats/" target="_blank" rel="noopener" class="btn">
-    <svg viewBox="0 0 24 24" aria-hidden="true" style="width:20px;height:20px;fill:currentColor;margin-right:4px;vertical-align:middle"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    QUERO AGORA
-  </a>
-</div>
-
-<!-- ====== COUNTDOWN SCRIPT (todos os timers da pagina) ====== -->
-<script>
-(function(){
-  var timers = document.querySelectorAll('[data-timer]');
-  if(!timers.length) return;
-  var parts = (timers[0].getAttribute('data-timer')||'00:14:59').split(':').map(Number);
-  var total = parts[0]*3600 + parts[1]*60 + parts[2];
-  function tick(){
-    if(total<0){total=0;}
-    var h = Math.floor(total/3600), m = Math.floor((total%3600)/60), s = total%60;
-    var hs = String(h).padStart(2,'0'), ms = String(m).padStart(2,'0'), ss = String(s).padStart(2,'0');
-    timers.forEach(function(t){
-      var hEl = t.querySelector('[data-h]'), mEl = t.querySelector('[data-m]'), sEl = t.querySelector('[data-s]');
-      if(hEl) hEl.textContent = hs;
-      if(mEl) mEl.textContent = ms;
-      if(sEl) sEl.textContent = ss;
-    });
-    if(total>0) total--;
-  }
-  tick(); setInterval(tick, 1000);
-})();
-</script>
-
-<!-- ====== EXIT POPUP ====== -->
-<div class="exit-overlay" id="exitPopup">
-  <div class="exit-modal">
-    <button class="close-x" id="closeExit" aria-label="Fechar">×</button>
-    <div class="exit-icon">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    </div>
-    <h3>Opa, não sai agora! 🍓</h3>
-    <p>Converse com nossa atendente! Podemos te ajudar a garantir <strong>R$ 150 de desconto</strong> no seu pedido.</p>
-    <a href="https://metabolismoativo.com/back-whats/" target="_blank" class="btn-exit-wpp">
-      <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-      Falar com a atendente
-    </a>
-    <button class="no-thanks" id="noThanks">Não, obrigado</button>
-  </div>
-</div>
-
-<!-- ====== EXIT POPUP SCRIPT ====== -->
-<script>
-(function(){
-  var popup = document.getElementById('exitPopup');
-  if(!popup) return;
-  var shown = false;
-  function show(){ if(shown) return; shown = true; popup.classList.add('show'); }
-  function hide(){ popup.classList.remove('show'); }
-  document.getElementById('closeExit').addEventListener('click', hide);
-  document.getElementById('noThanks').addEventListener('click', hide);
-  popup.addEventListener('click', function(e){ if(e.target === popup) hide(); });
-  document.addEventListener('mouseleave', function(e){ if(e.clientY <= 0) show(); });
-  setTimeout(show, 45000);
-  var lastY = window.scrollY, lastT = Date.now();
-  window.addEventListener('scroll', function(){
-    var dy = window.scrollY - lastY;
-    var dt = Date.now() - lastT;
-    if(dy < -200 && dt < 400) show();
-    lastY = window.scrollY; lastT = Date.now();
-  }, { passive: true });
-})();
-</script>
-
-<!-- ====== CONFETES ROSA/MORANGO ====== -->
 <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
 <script>
 (function(){
-  if(typeof confetti !== 'function') return;
-  var duration = 1500, animationEnd = Date.now() + duration;
-  var defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 9999 };
-  function rand(min,max){ return Math.random()*(max-min)+min; }
-  confetti({ particleCount: 90, spread: 90, origin: { y: 0.6 },
-    colors: ['#D6336E','#EC4E8E','#F6A7C6','#FFEAF1','#FFC23C','#FFFFFF'] });
-  var iv = setInterval(function(){
-    var left = animationEnd - Date.now();
-    if(left <= 0) return clearInterval(iv);
-    var pc = 22 * (left / duration);
-    confetti(Object.assign({}, defaults, { particleCount: pc,
-      origin: { x: rand(0.1,0.3), y: Math.random()-0.2 },
-      colors: ['#D6336E','#EC4E8E','#FFFFFF'] }));
-    confetti(Object.assign({}, defaults, { particleCount: pc,
-      origin: { x: rand(0.7,0.9), y: Math.random()-0.2 },
-      colors: ['#F6A7C6','#FFEAF1','#FFC23C'] }));
-  }, 250);
+  var canvas = document.getElementById('canvas');
+  var stage = document.getElementById('scratchStage');
+  var ctx = canvas.getContext('2d');
+  var isScratching = false;
+  var lastPos = null;
+  var lastCheck = 0;
+  var scratchPct = 0;
+  var revealed = false;
+  var WPP_URL = 'https://metabolismoativo.com/back-whats/';
+  var REDIRECT_URL = 'pv-back.html?cupom=CLIENTE40';
+
+  function setupCanvas(){
+    var rect = stage.getBoundingClientRect();
+    var dpr = window.devicePixelRatio || 1;
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+
+    var w = rect.width, h = rect.height;
+
+    // Cor da cartela (cinza com brilho rosa sutil)
+    var grad = ctx.createLinearGradient(0, 0, w, h);
+    grad.addColorStop(0, '#C5B0BA');
+    grad.addColorStop(0.5, '#B49AA6');
+    grad.addColorStop(1, '#A8909C');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, w, h);
+
+    // brilho diagonal
+    var shine = ctx.createLinearGradient(0, 0, w, h);
+    shine.addColorStop(0, 'rgba(255,255,255,0)');
+    shine.addColorStop(0.5, 'rgba(255,255,255,.25)');
+    shine.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = shine;
+    ctx.fillRect(0, 0, w, h);
+
+    // Texto "raspe aqui"
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = '700 22px Fredoka, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('RASPE AQUI', w/2, h/2 - 22);
+
+    // Emoji morango grande
+    ctx.font = '54px sans-serif';
+    ctx.fillText('🍓', w/2, h/2 + 28);
+
+    // Pontilhado decorativo nos cantos
+    ctx.fillStyle = 'rgba(255,255,255,.4)';
+    ctx.font = '18px sans-serif';
+    ctx.fillText('★ ★ ★', w/2, h/2 + 76);
+  }
+
+  function getXY(e){
+    var rect = canvas.getBoundingClientRect();
+    var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    var clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return { x: clientX - rect.left, y: clientY - rect.top };
+  }
+
+  function scratchAt(x, y){
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.lineWidth = 52;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    if(lastPos){
+      ctx.beginPath();
+      ctx.moveTo(lastPos.x, lastPos.y);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+    } else {
+      ctx.beginPath();
+      ctx.arc(x, y, 28, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    lastPos = { x: x, y: y };
+
+    var now = Date.now();
+    if(now - lastCheck > 150){
+      lastCheck = now;
+      checkPercentage();
+    }
+  }
+
+  function checkPercentage(){
+    var img = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = img.data;
+    var clear = 0;
+    for(var i = 3; i < data.length; i += 4){
+      if(data[i] < 128) clear++;
+    }
+    scratchPct = (clear / (data.length / 4)) * 100;
+
+    // Mostra botão revelar a 15%
+    if(scratchPct >= 15 && !revealed){
+      document.getElementById('revealBtn').classList.add('show');
+    }
+    // Atualiza hint
+    if(scratchPct > 0 && scratchPct < 50 && !revealed){
+      document.getElementById('hint').textContent = 'Continue raspando... ' + Math.round(scratchPct) + '%';
+    }
+    // Revela a 50%
+    if(scratchPct > 50 && !revealed){
+      reveal();
+    }
+  }
+
+  function reveal(){
+    if(revealed) return;
+    revealed = true;
+    // Limpa canvas todo
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Estado revelado
+    document.getElementById('introTitle').classList.add('faded');
+    document.getElementById('introSub').classList.add('faded');
+    document.getElementById('hint').style.display = 'none';
+    document.getElementById('revealBtn').style.display = 'none';
+    stage.classList.add('revealed');
+    document.getElementById('successMsg').classList.add('show');
+    // Confetes
+    if(typeof confetti === 'function'){
+      var end = Date.now() + 1500;
+      (function frame(){
+        confetti({ particleCount: 4, angle: 60, spread: 60, origin: { x: 0 }, colors: ['#D6336E','#EC4E8E','#F6A7C6','#FFC23C'] });
+        confetti({ particleCount: 4, angle: 120, spread: 60, origin: { x: 1 }, colors: ['#FFEAF1','#FBD3E1','#FFC23C','#FFFFFF'] });
+        if(Date.now() < end) requestAnimationFrame(frame);
+      })();
+      confetti({ particleCount: 80, spread: 100, origin: { y: 0.5 }, colors: ['#D6336E','#EC4E8E','#F6A7C6','#FFEAF1','#FFC23C'] });
+    }
+    startExpireTimer();
+    startRedirectCountdown();
+  }
+
+  // Auto-reveal em 10s se não interagir
+  setTimeout(function(){ if(!revealed) reveal(); }, 10000);
+
+  // Timer de validade do cupom (10 min)
+  function startExpireTimer(){
+    var totalSec = 10 * 60;
+    var el = document.getElementById('expireTimer');
+    function tick(){
+      if(totalSec < 0) return;
+      var m = Math.floor(totalSec/60), s = totalSec % 60;
+      el.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+      totalSec--;
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  // Redirect countdown (5s → pv-back)
+  function startRedirectCountdown(){
+    var sec = 5;
+    var el = document.getElementById('redirectIn');
+    var iv = setInterval(function(){
+      sec--;
+      if(sec <= 0){
+        clearInterval(iv);
+        window.location.href = REDIRECT_URL;
+        return;
+      }
+      el.textContent = sec;
+    }, 1000);
+  }
+
+  // Event listeners
+  canvas.addEventListener('mousedown', function(e){ e.preventDefault(); isScratching = true; var p = getXY(e); scratchAt(p.x, p.y); });
+  canvas.addEventListener('mousemove', function(e){ e.preventDefault(); if(isScratching){ var p = getXY(e); scratchAt(p.x, p.y); } });
+  canvas.addEventListener('mouseup', function(){ isScratching = false; lastPos = null; });
+  canvas.addEventListener('mouseleave', function(){ isScratching = false; lastPos = null; });
+  canvas.addEventListener('touchstart', function(e){ e.preventDefault(); isScratching = true; var p = getXY(e); scratchAt(p.x, p.y); }, { passive: false });
+  canvas.addEventListener('touchmove', function(e){ e.preventDefault(); if(isScratching){ var p = getXY(e); scratchAt(p.x, p.y); } }, { passive: false });
+  canvas.addEventListener('touchend', function(e){ e.preventDefault(); isScratching = false; lastPos = null; }, { passive: false });
+
+  // Reveal button + see offers + CTA
+  document.getElementById('revealBtn').addEventListener('click', reveal);
+  document.getElementById('seeOffers').addEventListener('click', function(){ window.location.href = REDIRECT_URL; });
+  // CTA WhatsApp já tem href fixo (#whatsapp) — usuario substitui depois
+
+  // Init
+  window.addEventListener('load', setupCanvas);
+  window.addEventListener('resize', function(){ if(!revealed) setupCanvas(); });
+  setupCanvas();
 })();
 </script>
 
-</body></html>
+</body>
+</html>
