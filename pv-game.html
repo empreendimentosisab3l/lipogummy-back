@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LipoGummy® — Você ganhou uma tentativa!</title>
+<link href="css/fonts.css" rel="stylesheet">
+<style>
+:root{
+  --pink:#EC4E8E;
+  --pink-deep:#D6336E;
+  --magenta:#C12C66;
+  --rose:#F6A7C6;
+  --rose-soft:#FBD9E4;
+  --rose-mist:#FFEAF1;
+  --cream:#FFF6F9;
+  --red:#E5384A;
+  --ink:#3B2430;
+  --ink-soft:#7A6470;
+  --plum:#2B1722;
+  --gold:#FFC23C;
+  --grad-rose:linear-gradient(160deg,#FFEAF1 0%,#FBD3E1 55%,#F6B6CE 100%);
+  --grad-hot:linear-gradient(135deg,#F2629A 0%,#D6336E 100%);
+  --shadow-card:0 24px 60px -24px rgba(193,44,102,.40);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{font-family:'Nunito',-apple-system,sans-serif;color:var(--ink);background:var(--grad-rose);min-height:100vh;line-height:1.55;overflow-x:hidden;position:relative}
+body::before,body::after{content:'';position:fixed;border-radius:50%;background:rgba(255,255,255,.45);filter:blur(40px);pointer-events:none;z-index:0}
+body::before{width:340px;height:340px;top:-120px;left:-120px}
+body::after{width:300px;height:300px;bottom:-100px;right:-100px}
+h1,h2,h3{font-family:'Fredoka',sans-serif;font-weight:600;line-height:1.15;letter-spacing:-.01em}
+
+/* ====== TOP BAR ====== */
+.topbar{background:var(--red);color:#fff;text-align:center;font-weight:800;font-size:.86rem;
+  padding:10px 16px;letter-spacing:.02em;text-transform:uppercase;position:relative;z-index:10}
+
+/* ====== HEADER ====== */
+header{background:#fff;border-bottom:1px solid rgba(236,78,142,.15);position:sticky;top:0;z-index:10}
+.head-in{display:flex;align-items:center;justify-content:center;height:60px;padding:0 22px}
+.logo{font-family:'Fredoka';font-weight:600;font-size:1.4rem;letter-spacing:-.02em}
+.lg-lipo{color:var(--pink-deep)}
+
+/* ====== MAIN ====== */
+main{position:relative;z-index:1;padding:30px 20px 60px;display:flex;align-items:center;justify-content:center;min-height:calc(100vh - 110px)}
+.game-wrap{max-width:440px;width:100%;text-align:center}
+
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#fff;color:var(--pink-deep);
+  font-weight:800;font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:8px 18px;border-radius:50px;box-shadow:0 18px 50px -18px rgba(214,51,110,.45);margin-bottom:18px}
+.eyebrow .dot{width:7px;height:7px;background:var(--gold);border-radius:50%;animation:blink 1.4s infinite}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
+
+.intro-title{font-size:clamp(1.6rem,4.5vw,2.2rem);margin-bottom:10px;color:var(--ink);transition:all .7s}
+.intro-title .hl{color:var(--pink-deep)}
+.intro-sub{font-size:1rem;color:var(--ink-soft);font-weight:600;margin-bottom:24px;transition:all .7s}
+.intro-title.faded,.intro-sub.faded{filter:blur(4px);opacity:.4;transform:scale(.95)}
+
+/* ====== SCRATCH CARD ====== */
+.scratch-stage{position:relative;margin:0 auto 22px;transition:transform .7s;width:100%;max-width:340px;aspect-ratio:340/420}
+.scratch-stage.revealed{transform:scale(1.06)}
+
+.coupon{position:absolute;inset:0;background:var(--grad-hot);border-radius:24px;padding:30px 22px;
+  border:2px solid rgba(255,255,255,.4);box-shadow:var(--shadow-card);display:flex;flex-direction:column;justify-content:center;text-align:center;color:#fff;overflow:hidden}
+.coupon::before,.coupon::after{content:'';position:absolute;width:36px;height:36px;border-radius:50%;background:var(--cream);top:50%;transform:translateY(-50%);box-shadow:inset 0 1px 4px rgba(0,0,0,.08)}
+.coupon::before{left:-18px}
+.coupon::after{right:-18px}
+
+.discount-num{font-family:'Fredoka';font-weight:600;font-size:clamp(5rem,18vw,6.5rem);line-height:1;color:#fff;text-shadow:0 6px 18px rgba(0,0,0,.18)}
+.discount-lbl{font-family:'Fredoka';font-weight:600;font-size:1.6rem;margin-top:-4px;letter-spacing:.02em}
+.discount-tag{font-size:.96rem;color:rgba(255,255,255,.92);font-weight:600;margin:8px 22px 0}
+
+.separator{position:relative;margin:22px 0;height:0;border-top:3px dashed rgba(255,255,255,.55)}
+
+.code-box{background:#fff;border-radius:16px;padding:14px 18px;box-shadow:0 8px 20px rgba(0,0,0,.18);border:3px dashed rgba(214,51,110,.3)}
+.code-box .code-lbl{color:var(--ink-soft);font-size:.74rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;margin-bottom:4px}
+.code-box .code-val{font-family:'Fredoka';font-weight:600;font-size:1.8rem;color:var(--pink-deep);letter-spacing:.06em;display:flex;align-items:center;justify-content:center;gap:8px}
+.code-box .code-val::before{content:'✓';display:inline-flex;width:24px;height:24px;background:var(--pink-deep);color:#fff;border-radius:50%;align-items:center;justify-content:center;font-size:.9rem;font-weight:900}
+
+.scratch-canvas{position:absolute;inset:0;width:100%;height:100%;cursor:pointer;border-radius:24px;touch-action:none;display:block}
+
+/* ====== STATUS ====== */
+.scratch-hint{font-size:.92rem;color:var(--pink-deep);font-weight:800;margin-top:14px;min-height:1.4em}
+.reveal-btn{display:none;width:100%;max-width:340px;margin:14px auto 0;background:#fff;border:2px dashed var(--pink-deep);color:var(--pink-deep);
+  font-family:'Fredoka';font-weight:600;font-size:.96rem;padding:12px 20px;border-radius:50px;cursor:pointer;
+  transition:transform .18s,box-shadow .18s}
+.reveal-btn:hover{transform:translateY(-2px);box-shadow:0 10px 20px rgba(214,51,110,.2)}
+.reveal-btn.show{display:inline-block;animation:fadeIn .4s ease}
+
+/* ====== REVEALED STATE ====== */
+.success-msg{display:none;margin:22px auto 0;max-width:380px;animation:fadeIn .5s ease}
+.success-msg.show{display:block}
+.success-msg h2{font-size:1.4rem;color:var(--ink);margin-bottom:8px}
+.success-msg h2 .hl{color:var(--pink-deep)}
+.success-msg p{color:var(--ink-soft);font-weight:600;font-size:.96rem;margin-bottom:18px}
+
+.expire-box{background:#fff;border-radius:18px;padding:14px 22px;box-shadow:0 12px 30px -16px rgba(193,44,102,.4);display:inline-flex;flex-direction:column;align-items:center;gap:6px;margin-bottom:18px}
+.expire-lbl{font-size:.7rem;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-soft)}
+.expire-timer{font-family:'Fredoka';font-weight:600;font-size:2rem;color:var(--pink-deep);line-height:1;font-variant-numeric:tabular-nums}
+
+.btn-cta{display:inline-flex;align-items:center;justify-content:center;gap:.5em;font-family:'Fredoka',sans-serif;font-weight:600;font-size:1.06rem;color:#fff;background:#25D366;padding:16px 32px;border-radius:60px;text-decoration:none;
+  box-shadow:0 14px 30px -10px rgba(37,211,102,.6),inset 0 1px 0 rgba(255,255,255,.35);
+  transition:transform .18s,box-shadow .18s;text-transform:uppercase;letter-spacing:.04em;width:100%;max-width:340px;border:none;cursor:pointer}
+.btn-cta:hover{transform:translateY(-3px) scale(1.02);box-shadow:0 22px 40px -12px rgba(37,211,102,.7);color:#fff}
+.btn-cta svg{width:24px;height:24px;fill:#fff}
+
+.btn-secondary{display:block;margin:14px auto 0;background:none;border:none;color:var(--ink-soft);font-size:.86rem;font-weight:700;text-decoration:underline;cursor:pointer;font-family:'Nunito',sans-serif}
+.btn-secondary:hover{color:var(--pink-deep)}
+
+.redirect-info{margin-top:18px;font-size:.82rem;color:var(--ink-soft);font-weight:700}
+.redirect-info span{color:var(--pink-deep);font-weight:800}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+
+@media (max-width:420px){
+  .scratch-stage{max-width:300px}
+  .discount-num{font-size:5rem}
+  .discount-lbl{font-size:1.4rem}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">🎁 Sua tentativa expira em instantes — não saia desta página</div>
+
+<header>
+  <div class="head-in">
+    <div class="logo"><span class="lg-lipo">Lipo</span>Gummy</div>
+  </div>
+</header>
+
+<main>
+  <div class="game-wrap">
+
+    <!-- INTRO (some quando revelar) -->
+    <span class="eyebrow" id="eyebrow"><span class="dot"></span> Você ganhou 1 tentativa</span>
+    <h1 class="intro-title" id="introTitle">Raspe para revelar seu <span class="hl">desconto exclusivo</span> 🍓</h1>
+    <p class="intro-sub" id="introSub">Apenas 2% dos visitantes recebem esta chance. Use o dedo (ou o mouse) para raspar a cartela abaixo.</p>
+
+    <!-- SCRATCH CARD -->
+    <div class="scratch-stage" id="scratchStage">
+      <div class="coupon" id="coupon">
+        <div class="discount-num">40<span style="font-size:.5em;vertical-align:top">%</span></div>
+        <div class="discount-lbl">DE DESCONTO</div>
+        <div class="discount-tag">no seu pedido LipoGummy — válido só pelo WhatsApp</div>
+        <div class="separator"></div>
+        <div class="code-box">
+          <div class="code-lbl">Seu cupom exclusivo</div>
+          <div class="code-val">MORANGO40</div>
+        </div>
+      </div>
+      <canvas class="scratch-canvas" id="canvas"></canvas>
+    </div>
+
+    <!-- HINT / REVEAL BUTTON -->
+    <p class="scratch-hint" id="hint">👆 Raspe a cartela acima</p>
+    <button class="reveal-btn" id="revealBtn" type="button">✨ Revelar agora</button>
+
+    <!-- REVEALED MESSAGE -->
+    <div class="success-msg" id="successMsg">
+      <h2>Parabéns! Você ganhou <span class="hl">40% OFF</span></h2>
+      <p>Resgate seu cupom <strong>MORANGO40</strong> agora mesmo no WhatsApp. Ele expira em:</p>
+
+      <div class="expire-box">
+        <div class="expire-lbl">⏱ Cupom válido por</div>
+        <div class="expire-timer" id="expireTimer">10:00</div>
+      </div>
+
+      <a href="#whatsapp" target="_blank" class="btn-cta" id="ctaWpp">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Resgatar no WhatsApp
+      </a>
+
+      <button class="btn-secondary" id="seeOffers" type="button">Ver as ofertas do site →</button>
+
+      <p class="redirect-info">Redirecionando em <span id="redirectIn">5</span>s…</p>
+    </div>
+
+  </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+<script>
+(function(){
+  var canvas = document.getElementById('canvas');
+  var stage = document.getElementById('scratchStage');
+  var ctx = canvas.getContext('2d');
+  var isScratching = false;
+  var lastPos = null;
+  var lastCheck = 0;
+  var scratchPct = 0;
+  var revealed = false;
+  var WPP_URL = '#whatsapp'; // placeholder
+  var REDIRECT_URL = 'index.html?cupom=MORANGO40';
+
+  function setupCanvas(){
+    var rect = stage.getBoundingClientRect();
+    var dpr = window.devicePixelRatio || 1;
+    canvas.width = rect.width * dpr;
+    canvas.height = rect.height * dpr;
+    canvas.style.width = rect.width + 'px';
+    canvas.style.height = rect.height + 'px';
+    ctx.setTransform(1, 0, 0, 1, 0, 0);
+    ctx.scale(dpr, dpr);
+
+    var w = rect.width, h = rect.height;
+
+    // Cor da cartela (cinza com brilho rosa sutil)
+    var grad = ctx.createLinearGradient(0, 0, w, h);
+    grad.addColorStop(0, '#C5B0BA');
+    grad.addColorStop(0.5, '#B49AA6');
+    grad.addColorStop(1, '#A8909C');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, w, h);
+
+    // brilho diagonal
+    var shine = ctx.createLinearGradient(0, 0, w, h);
+    shine.addColorStop(0, 'rgba(255,255,255,0)');
+    shine.addColorStop(0.5, 'rgba(255,255,255,.25)');
+    shine.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = shine;
+    ctx.fillRect(0, 0, w, h);
+
+    // Texto "raspe aqui"
+    ctx.fillStyle = '#FFFFFF';
+    ctx.font = '700 22px Fredoka, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('RASPE AQUI', w/2, h/2 - 22);
+
+    // Emoji morango grande
+    ctx.font = '54px sans-serif';
+    ctx.fillText('🍓', w/2, h/2 + 28);
+
+    // Pontilhado decorativo nos cantos
+    ctx.fillStyle = 'rgba(255,255,255,.4)';
+    ctx.font = '18px sans-serif';
+    ctx.fillText('★ ★ ★', w/2, h/2 + 76);
+  }
+
+  function getXY(e){
+    var rect = canvas.getBoundingClientRect();
+    var clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    var clientY = e.touches ? e.touches[0].clientY : e.clientY;
+    return { x: clientX - rect.left, y: clientY - rect.top };
+  }
+
+  function scratchAt(x, y){
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.lineWidth = 52;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+    if(lastPos){
+      ctx.beginPath();
+      ctx.moveTo(lastPos.x, lastPos.y);
+      ctx.lineTo(x, y);
+      ctx.stroke();
+    } else {
+      ctx.beginPath();
+      ctx.arc(x, y, 28, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    lastPos = { x: x, y: y };
+
+    var now = Date.now();
+    if(now - lastCheck > 150){
+      lastCheck = now;
+      checkPercentage();
+    }
+  }
+
+  function checkPercentage(){
+    var img = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    var data = img.data;
+    var clear = 0;
+    for(var i = 3; i < data.length; i += 4){
+      if(data[i] < 128) clear++;
+    }
+    scratchPct = (clear / (data.length / 4)) * 100;
+
+    // Mostra botão revelar a 15%
+    if(scratchPct >= 15 && !revealed){
+      document.getElementById('revealBtn').classList.add('show');
+    }
+    // Atualiza hint
+    if(scratchPct > 0 && scratchPct < 50 && !revealed){
+      document.getElementById('hint').textContent = 'Continue raspando... ' + Math.round(scratchPct) + '%';
+    }
+    // Revela a 50%
+    if(scratchPct > 50 && !revealed){
+      reveal();
+    }
+  }
+
+  function reveal(){
+    if(revealed) return;
+    revealed = true;
+    // Limpa canvas todo
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    // Estado revelado
+    document.getElementById('introTitle').classList.add('faded');
+    document.getElementById('introSub').classList.add('faded');
+    document.getElementById('hint').style.display = 'none';
+    document.getElementById('revealBtn').style.display = 'none';
+    stage.classList.add('revealed');
+    document.getElementById('successMsg').classList.add('show');
+    // Confetes
+    if(typeof confetti === 'function'){
+      var end = Date.now() + 1500;
+      (function frame(){
+        confetti({ particleCount: 4, angle: 60, spread: 60, origin: { x: 0 }, colors: ['#D6336E','#EC4E8E','#F6A7C6','#FFC23C'] });
+        confetti({ particleCount: 4, angle: 120, spread: 60, origin: { x: 1 }, colors: ['#FFEAF1','#FBD3E1','#FFC23C','#FFFFFF'] });
+        if(Date.now() < end) requestAnimationFrame(frame);
+      })();
+      confetti({ particleCount: 80, spread: 100, origin: { y: 0.5 }, colors: ['#D6336E','#EC4E8E','#F6A7C6','#FFEAF1','#FFC23C'] });
+    }
+    startExpireTimer();
+    startRedirectCountdown();
+  }
+
+  // Auto-reveal em 10s se não interagir
+  setTimeout(function(){ if(!revealed) reveal(); }, 10000);
+
+  // Timer de validade do cupom (10 min)
+  function startExpireTimer(){
+    var totalSec = 10 * 60;
+    var el = document.getElementById('expireTimer');
+    function tick(){
+      if(totalSec < 0) return;
+      var m = Math.floor(totalSec/60), s = totalSec % 60;
+      el.textContent = String(m).padStart(2,'0') + ':' + String(s).padStart(2,'0');
+      totalSec--;
+    }
+    tick();
+    setInterval(tick, 1000);
+  }
+
+  // Redirect countdown (5s → pv-back)
+  function startRedirectCountdown(){
+    var sec = 5;
+    var el = document.getElementById('redirectIn');
+    var iv = setInterval(function(){
+      sec--;
+      if(sec <= 0){
+        clearInterval(iv);
+        window.location.href = REDIRECT_URL;
+        return;
+      }
+      el.textContent = sec;
+    }, 1000);
+  }
+
+  // Event listeners
+  canvas.addEventListener('mousedown', function(e){ e.preventDefault(); isScratching = true; var p = getXY(e); scratchAt(p.x, p.y); });
+  canvas.addEventListener('mousemove', function(e){ e.preventDefault(); if(isScratching){ var p = getXY(e); scratchAt(p.x, p.y); } });
+  canvas.addEventListener('mouseup', function(){ isScratching = false; lastPos = null; });
+  canvas.addEventListener('mouseleave', function(){ isScratching = false; lastPos = null; });
+  canvas.addEventListener('touchstart', function(e){ e.preventDefault(); isScratching = true; var p = getXY(e); scratchAt(p.x, p.y); }, { passive: false });
+  canvas.addEventListener('touchmove', function(e){ e.preventDefault(); if(isScratching){ var p = getXY(e); scratchAt(p.x, p.y); } }, { passive: false });
+  canvas.addEventListener('touchend', function(e){ e.preventDefault(); isScratching = false; lastPos = null; }, { passive: false });
+
+  // Reveal button + see offers + CTA
+  document.getElementById('revealBtn').addEventListener('click', reveal);
+  document.getElementById('seeOffers').addEventListener('click', function(){ window.location.href = REDIRECT_URL; });
+  // CTA WhatsApp já tem href fixo (#whatsapp) — usuario substitui depois
+
+  // Init
+  window.addEventListener('load', setupCanvas);
+  window.addEventListener('resize', function(){ if(!revealed) setupCanvas(); });
+  setupCanvas();
+})();
+</script>
+
+</body>
+</html>
