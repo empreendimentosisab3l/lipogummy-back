@@ -248,5 +248,9 @@ footer p{color:rgba(255,255,255,.7);font-weight:500;max-width:380px;margin-top:8
 .btn-exit-wpp svg{width:22px;height:22px;fill:#fff}
 .exit-modal .no-thanks{display:block;margin:12px auto 0;background:none;border:none;color:#888;font-size:.82rem;text-decoration:underline;cursor:pointer;font-family:'Nunito',sans-serif}
 
-/* sticky CTA mobile precisa estar acima do float */
+/* sticky CTA mobile */
 .sticky-cta{z-index:95}
+
+/* botao WhatsApp (verde) - sobrescreve .btn */
+.btn-whats{background:#25D366 !important;box-shadow:0 14px 30px -10px rgba(37,211,102,.7),inset 0 1px 0 rgba(255,255,255,.35) !important}
+.btn-whats:hover{background:#1ebe5a !important;box-shadow:0 22px 40px -12px rgba(37,211,102,.8) !important}
